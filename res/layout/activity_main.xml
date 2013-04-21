@@ -27,4 +27,14 @@
         android:text="Button" />
 <!--         android:layout_toRightOf="@+id/textView1" -->
 
+	<Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="32dp"
+        android:onClick="toListViewButtonClick"
+        android:text="ListView motherfucker..." />
+
 </RelativeLayout>

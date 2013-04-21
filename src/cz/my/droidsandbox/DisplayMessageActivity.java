@@ -3,6 +3,7 @@ package cz.my.droidsandbox;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 
 public class DisplayMessageActivity extends FragmentActivity {
     @Override
@@ -34,7 +35,7 @@ public class DisplayMessageActivity extends FragmentActivity {
         }
     }
     
-    public void switchFragments(){
+    public void displayMessageClick(View view){
     	// Create fragment and give it an argument specifying the article it should show
     	ArticleFragment newFragment = new ArticleFragment();
     	Bundle args = new Bundle();

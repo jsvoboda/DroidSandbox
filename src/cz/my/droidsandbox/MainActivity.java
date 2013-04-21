@@ -35,4 +35,9 @@ public class MainActivity extends Activity {
 		intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
 	}
+	
+	public void toListViewButtonClick(View view){	
+		Intent intent = new Intent(this, ListViewActivity.class);
+		startActivity(intent);
+	}
 }
