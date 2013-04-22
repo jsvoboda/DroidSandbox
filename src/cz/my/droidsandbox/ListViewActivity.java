@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -13,6 +15,7 @@ import android.os.Build;
 
 public class ListViewActivity extends FragmentActivity {
 	
+	ListViewFragment listViewFragment;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +33,15 @@ public class ListViewActivity extends FragmentActivity {
             }
 
             // Create an instance of ExampleFragment
-            ListViewFragment firstFragment = new ListViewFragment();
+            listViewFragment = new ListViewFragment();
             
             // In case this activity was started with special instructions from an Intent,
             // pass the Intent's extras to the fragment as arguments
-            firstFragment.setArguments(getIntent().getExtras());
+            listViewFragment.setArguments(getIntent().getExtras());
             
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, firstFragment).commit();
+                    .add(R.id.fragment_container, listViewFragment).commit();
         }}
 
 	/**
@@ -75,4 +78,15 @@ public class ListViewActivity extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	
+	public void reportButtonClick(View view){
+		String report = "Selected items: ";
+		for (SelectableItemModel item : listViewFragment.items) {
+			if(item.isSelected()){
+				report += item.getName() + " ";
+			}
+		}
+		
+		Toast.makeText(this, report, Toast.LENGTH_LONG).show();
+	}
 }

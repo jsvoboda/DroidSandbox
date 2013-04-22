@@ -12,13 +12,22 @@
 
     <Button
         android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
-	    android:text="report!"
-	    android:onClick="@+id/reportButtonClick"/>
+        android:layout_height="wrap_content"
+        android:text="report!" 
+        android:onClick="reportButtonClick"/>
+
+   	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ListView just below... trust me" />
+    
 
 	<ListView
 	    android:id="@+id/listview"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent" >
 	</ListView>
+
 </LinearLayout>
