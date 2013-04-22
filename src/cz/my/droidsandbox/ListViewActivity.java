@@ -13,8 +13,6 @@ import android.os.Build;
 
 public class ListViewActivity extends FragmentActivity {
 	
-	String[] mockupData = {"snooze", "inkling", "notch", "albion", "clench"}; 
-	
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
